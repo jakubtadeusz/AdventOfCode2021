@@ -13,16 +13,18 @@ namespace AdventOfCode2021_1_2
             string datasample;
             while ((datasample = dataStream.ReadLine()) != null)
             {
-
-                // datasample has the current line of text - write it to the console.
+                //parse data from input file
                 lines.Add(int.Parse(datasample));
             }
 
             int largerMeasurements = 0;
+            //get first value of measurement window
             int prevSum = lines[0] + lines[1] + lines[2];
             for (int i = 1; i < lines.Count-2; i++)
             {
+                //get next value of measurement window
                 int newSum = lines[i] + lines[i + 1] + lines[i + 2];
+                //compare values
                 if (newSum > prevSum) largerMeasurements++;
                 prevSum = newSum;
             }
