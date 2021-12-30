@@ -17,6 +17,7 @@ namespace AdventOfCode2021_2_2
                 //parse data from input file
                 string command = datasample.Split(' ')[0];
                 int data = int.Parse(datasample.Split(' ')[1]);
+                //change horizontal position, aim and depth according to input data
                 switch (command)
                 {
                     case "down": aim+= data; break;

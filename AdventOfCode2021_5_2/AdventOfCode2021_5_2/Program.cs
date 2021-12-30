@@ -67,6 +67,8 @@ namespace AdventOfCode2021_5_2
                     }
                 }
 
+
+                //check for diagonal lines
                 if(x_dest-x == y_dest-y)
                 {
                     if (x <= x_dest)

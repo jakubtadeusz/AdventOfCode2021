@@ -31,6 +31,7 @@ namespace AdventOfCode2021_4_2
 
             int notChecked = bingoBoards.Count;
 
+            //check all the numbers
             for (int i = 0; i < numbers.Count; i++)
             {
                 for(int j = bingoBoards.Count-1; j >=0; j--)
@@ -40,6 +41,7 @@ namespace AdventOfCode2021_4_2
                     if (bingoBoards[j].IsBoardFinished())
                     {
                         bingoBoards.Remove(board);
+                        //if there is only one board left, finish
                         if (bingoBoards.Count == 0)
                         {
                             Console.WriteLine(numbers[i] * board.GetBoardScore());

@@ -11,6 +11,10 @@ namespace AdventOfCode2021_4_1
         int [] rowChecked = new int[5];
         int[] columnChecked = new int[5];
 
+        /// <summary>
+        /// Add new row of numbers to bingo board
+        /// </summary>
+        /// <param name="row"></param>
         public void AddRow(int [] row)
         {
             for (int i = 0; i < 5; i++)
@@ -45,6 +49,10 @@ namespace AdventOfCode2021_4_1
             }
         }
 
+        /// <summary>
+        /// Checks if the board is finished
+        /// </summary>
+        /// <returns></returns>
         public bool IsBoardFinished()
         {
             for(int i = 0; i<5; i++)
@@ -57,6 +65,10 @@ namespace AdventOfCode2021_4_1
             return false;
         }       
 
+        /// <summary>
+        /// Calculates board score
+        /// </summary>
+        /// <returns></returns>
         public int GetBoardScore()
         {
             int sum = 0;

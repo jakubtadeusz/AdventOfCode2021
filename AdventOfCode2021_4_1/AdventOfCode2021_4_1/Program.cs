@@ -15,9 +15,12 @@ namespace AdventOfCode2021_4_1
                 numbers.Add(int.Parse(item));
             }
             int n = 1;
+
+            //create bingo boards
             List<BingoBoard> bingoBoards = new List<BingoBoard>();
             while(n < lines.Length)
             {   
+                //create new bingo board
                 BingoBoard bingoBoard = new BingoBoard();
                 for(int i = 1; i <=5; i++)
                 {
@@ -26,6 +29,7 @@ namespace AdventOfCode2021_4_1
                     bingoBoard.AddRow(arr);
                 }
                 bingoBoards.Add(bingoBoard);
+                //move to the next board in the input file
                 n += 6;
             }
 
@@ -33,9 +37,12 @@ namespace AdventOfCode2021_4_1
             {
                 foreach (var board in bingoBoards)
                 {
+                    //check next number
                     board.CheckNumber(numbers[i]);
+                    //check if the board is finished
                     if (board.IsBoardFinished())
                     {
+                        //print result score
                         Console.WriteLine(numbers[i]*board.GetBoardScore());
                         return;
                     }

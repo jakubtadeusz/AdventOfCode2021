@@ -22,6 +22,7 @@ namespace AdventOfCode2021_3_1
                         case '1': ones++; break;
                     }
                 }
+                //check the most common bit in the corresponding position
                 if (zeros > ones)
                 {
                     gamma[i] = 0;
@@ -37,12 +38,14 @@ namespace AdventOfCode2021_3_1
             int gammaValue = 0;
             int epsilonValue = 0;
             int x = 1;
+            //calculate gamma and epsilon value
             for(int i = length-1; i >= 0; i--)
             {
                 gammaValue += x * gamma[i];
                 epsilonValue += x * epsilon[i];
                 x *= 2;
             }
+            //write power consumption to console
             Console.WriteLine(gammaValue*epsilonValue);
         }
     }
